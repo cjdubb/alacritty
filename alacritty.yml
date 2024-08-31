@@ -14,14 +14,14 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-#env:
+# env:
   # TERM variable
   #
   # This value is used to set the `$TERM` environment variable for
   # each instance of Alacritty. If it is not present, alacritty will
   # check the local terminfo database and use `alacritty` if it is
   # available, otherwise `xterm-256color` is used.
-  #TERM: alacritty
+  # TERM: xterm-256color
 
 #window:
   # Window dimensions (changes require restart)
@@ -174,7 +174,7 @@ font:
     style: Bold Italic
 
   # Point size
-  #size: 11.0
+  size: 13.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -199,7 +199,40 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
+# TokyoNight Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x000000'
+    foreground: '0xc0caf5'
 
+  # Normal colors
+  normal:
+    black:   '0x15161e'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xa9b1d6'
+
+  # Bright colors
+  bright:
+    black:   '0x414868'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xbb9af7'
+    cyan:    '0x7dcfff'
+    white:   '0xc0caf5'
+
+  indexed_colors:
+    - { index: 16, color: '0xff9e64' }
+    - { index: 17, color: '0xdb4b4b' }
+    
+  
 # Colors (Tomorrow Night)
 #colors:
   # Default colors
@@ -398,16 +431,16 @@ font:
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-#cursor:
+# cursor:
   # Cursor style
-  #style:
+  # style:
     # Cursor shape
     #
     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    #shape: Block
+    # shape: Beam
 
     # Cursor blinking state
     #
@@ -424,7 +457,8 @@ font:
   # the style of the active value of the normal cursor.
   #
   # See `cursor.style` for available options.
-  #vi_mode_style: None
+  # vi_mode_style:
+  #   shape: Block
 
   # Cursor blinking interval in milliseconds.
   #blink_interval: 750
@@ -454,10 +488,10 @@ font:
 # Default:
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+ program: /usr/local/bin/bash
+ args:
+   - --login
 
 # Startup directory
 #
